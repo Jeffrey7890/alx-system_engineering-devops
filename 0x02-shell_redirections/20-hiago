@@ -1,2 +1,2 @@
 #!/bin/bash
-sed 's/C//g' $1 | sed 's/c//g'
+cat $1 | tr -d 'Cc'
