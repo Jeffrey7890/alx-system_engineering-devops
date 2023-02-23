@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+
+i=1
+
+china=4
+japan=9
+italy=17
+
+while (( i <= 20 ))
+do
+	case "$i" in
+	"$china")
+		echo "$i"
+		echo "bad luck from China";;
+	"$japan")
+		echo "$i"
+		echo "bad luck from Japan";;
+	"$italy")
+		echo "$i"
+		echo "bad luck from Italy";;
+	*)
+		echo "$i";;
+	esac
+	(( i = i + 1 ))
+done
