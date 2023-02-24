@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # terminates 4-to_infinity_and_beyond
 scriptPID=$( pgrep -a -u jeffrey bash |grep 4-to_infinity_and_beyond | cut -d ' ' -f1 )
-kill "$scriptPID"
+
+for i in "$scriptPID";do
+	kill $i
+done
+
+
