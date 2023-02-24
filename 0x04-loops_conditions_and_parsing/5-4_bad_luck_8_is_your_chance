@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# prints Best school
+#+ and prints bad, good at 4 and 8
 
 i=1
 

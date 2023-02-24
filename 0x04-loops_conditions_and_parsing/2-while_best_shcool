@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#prints Best School 10 times
 
 i=0
 

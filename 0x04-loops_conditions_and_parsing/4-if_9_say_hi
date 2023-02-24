@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# prints Best shcool 10 times
+#+ and prints Hi after 9th time
 
 i=1
 
