@@ -3,7 +3,7 @@
 #+ fizz 3 only, and buzz 5 only
 
 
-for (( i=1; i < 100; i++ ))
+for (( i=1; i <= 100; i++ ))
 do
 	(( mult5=i % 5 ))
 	(( mult3=i % 3 ))
