@@ -2,5 +2,7 @@
 # changes the localhost ip
 # and add facebook.com as 8.8.8.8
 
-sed -i 's+127.0.0.1\tlocalhost+127.0.0.2\tlocalhost+g' /etc/hosts
-echo -e "8.8.8.8 \tfacebook.com" >> /etc/hosts
+cp /etc/hosts ~/hosts.new
+sed -i 's+127.0.0.1\tlocalhost+127.0.0.2\tlocalhost+g' ~/hosts.new
+echo -e "8.8.8.8 \tfacebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
