@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# changes the localhost ip
+# and add facebook.com as 8.8.8.8
+
+sed -i 's+127.0.0.1\tlocalhost+127.0.0.2\tlocalhost+g' /etc/hosts
+echo -e "8.8.8.8 \tfacebook.com" >> /etc/hosts
