@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# prints formated list of
-#+ file names in directory
-
-$LIST="$(ls | cut -d "-" -f 2)"
-for i in "$LIST"; do
-	echo "$i"
-done

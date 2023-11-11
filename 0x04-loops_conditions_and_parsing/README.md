@@ -1,1 +1,0 @@
-LOOPs and CONDITIONs and OPERATIONs
