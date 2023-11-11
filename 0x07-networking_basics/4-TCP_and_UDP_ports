@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-# displays listening sorkets
-# and their pid
-netstat -l -p
