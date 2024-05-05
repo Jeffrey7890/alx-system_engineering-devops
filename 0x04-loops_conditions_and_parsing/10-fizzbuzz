@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# prints fizzbuzz when mutiple of 3 and 5
+#+ fizz 3 only, and buzz 5 only
+
+
+for (( i=1; i <= 100; i++ ))
+do
+	(( mult5=i % 5 ))
+	(( mult3=i % 3 ))
+
+	if [ "$mult5" -eq 0 ] && [ "$mult3" -eq 0 ]
+	then
+		echo FizzBuzz
+	elif [ "$mult3" -eq 0 ] && [ "$mult5" -ne 0 ]
+	then
+		echo Fizz
+	elif [ "$mult5" -eq 0 ] && [ "$mult3" -ne 0 ]
+	then
+		echo Buzz
+	else
+		echo "$i"
+	fi	
+
+done
