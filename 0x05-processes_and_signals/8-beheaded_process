@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# terminates 7-highlander
+process="$( pgrep -x -f "bash ./7-highlander" )" 
+kill -9 "$process"
