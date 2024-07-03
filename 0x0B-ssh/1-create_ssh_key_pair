@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# creates a new ssh key with betty as paraphrase
+ssh-keygen -N betty -f school
