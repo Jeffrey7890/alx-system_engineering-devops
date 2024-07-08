@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# automate the debugging process
+identity=$(sudo docker container ls --all | grep  holbertonschool/265-0 | awk '{print $1}')
+sudo docker exec -i "$identity" sudo /etc/init.d/apache2 start
