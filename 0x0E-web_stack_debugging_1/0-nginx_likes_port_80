@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# fix nginx for
+sudo apt update
+sudo apt install nginx -y
