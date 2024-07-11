@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# configure a new nginx server with specifications
+apt update
+apt install nginx -y
+/etc/init.d/nginx restart
+cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bak
+sed -i "/server_name _;/a \ add_header X-Served-By $hostname;" /etc/nginx/sites-available/default
+/etc/init.d/nginx restart
