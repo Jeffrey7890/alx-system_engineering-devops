@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# bash file for subdomain
+print_rec ()
+{
+	domain=$(echo $1| cut -d '.' -f2-)
+
+	last=$(echo $1| cut -d '.' -f3-)
+
+	if [ -z "${last}" ]; then
+		newurl=$2.$1
+	else
+		newurl=$2.$domain
+	fi
+
+	printf "The subdomain %s is a " "$2"
+
+	dig "$newurl" | grep -A1 'ANSWER SECTION'  | awk -F' ' '{ printf $4 }'
+	printf " record and points to "
+	dig +short "$newurl"
+}
+
+
+
+if [ -z "$2" ]; then
+	for subs in "www" "lb-01" "web-01" "web-02"
+	do
+		print_rec "$1" "$subs"
+	done
+else
+	print_rec "$1" "$2"
+fi
