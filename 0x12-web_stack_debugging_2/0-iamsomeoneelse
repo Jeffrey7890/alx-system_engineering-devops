@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# run whoami under different users
+runuser -u "$1" whoami
