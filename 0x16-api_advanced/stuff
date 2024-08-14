@@ -1,0 +1,24 @@
+import requests
+
+def top_ten(subreddit):
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+
+    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+
+    try:
+        response = requests.get(url, headers=headers, allow_redirects=False)
+
+        if response.status_code == 200:
+            data = response.json()
+            for i in range(10):
+                print(data['data']['children'][i]['data']['title'])
+        else:
+            print(None)
+    except requests.RequestException:
+        print(None)
+
+subreddit = 'programming'
+top_ten(subreddit)
+
