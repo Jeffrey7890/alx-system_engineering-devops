@@ -8,16 +8,15 @@ import requests
 def number_of_subscribers(subreddit):
     """ get tge number of sub of s subreddit """
     headers = {
-        'User-Agent': '''Mozilla/5.0 (Windows NT 10.0; Win64; x64;\
-                rv:92.0) Gecko/20100101 Firefox/92.0'''
+        'User-Agent': 'My-User-Agent'
     }
     url = 'https://www.reddit.com/r/{s}/about.json'.format(s=subreddit)
 
     try:
         response = requests.get(url, headers=headers, allow_redirects=False)
-        if response.status_code == 200:
+        if response.status_code < 300:
             data = response.json()
-            return data['data']['subscribers']
+            return data.get("data").get("subscribers") 
         else:
             return 0
     except requests.RequestException as e:
