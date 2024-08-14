@@ -1,12 +1,15 @@
 #!/usr/bin/python3
+
+""" get number of subscribers """
+
 import requests
 
 
 def number_of_subscribers(subreddit):
     """ get tge number of sub of s subreddit """
     headers = {
-        'User-Agent': '''Mozilla/5.0 (Windows NT 10.0; Win64; x64;
-                    rv:92.0) Gecko/20100101 Firefox/92.0'''
+        'User-Agent': '''Mozilla/5.0 (Windows NT 10.0; Win64; x64;\
+                rv:92.0) Gecko/20100101 Firefox/92.0'''
     }
     url = 'https://www.reddit.com/r/{s}/about.json'.format(s=subreddit)
 
